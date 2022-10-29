@@ -8,7 +8,8 @@ import { compile } from 'yeahjs'
 import feeds from '../src/feeds.js'
 
 const INPUT_TEMPLATE = 'src/template.html'
-const OUTPUT_FILE = 'dist/index.html'
+const OUTPUT_HTML_FILE = 'dist/index.html'
+const OUTPUT_JSON_FILE = 'dist/index.json'
 const TEST_FILE = 'src/data.json'
 const YOUTUBE_URL = 'vid.puffyan.us'
 const NOW = getNowDate()
@@ -110,7 +111,10 @@ export async function render(dev = false, write = false) {
   const source = readFileSync(resolve(INPUT_TEMPLATE), { encoding: 'utf8' })
   const template = compile(source, { localsName: 'it' })
   const html = template({ videos, days, now, searchUrl })
-  writeFileSync(resolve(OUTPUT_FILE), html, { encoding: 'utf8' })
+  writeFileSync(resolve(OUTPUT_HTML_FILE), html, { encoding: 'utf8' })
+  writeFileSync(resolve(OUTPUT_JSON_FILE), JSON.stringify(videos, null, 2), {
+    encoding: 'utf8',
+  })
 }
 
 function getNowDate() {
