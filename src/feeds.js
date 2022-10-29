@@ -35,6 +35,10 @@ const feeds = [
     'Laura Kampf',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCRix1GJvSBNDpEFY561eSzw',
   ],
+  [
+    'Nicolas Bras',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCqzB9Ks5H939XLuSuVLuPVw',
+  ],
 ]
 
 export default feeds
