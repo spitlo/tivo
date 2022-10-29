@@ -2,15 +2,13 @@ name: build
 on:
   push:
     branches:
-      - master
+      - main
   schedule:
     # Run this script every 1 hrs
     #  */m hr day month day_of_week
     - cron:  '0 */1 * * *'
   workflow_dispatch:
-    inputs:
-      tags:
-        description: 'Description Tag'  
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-20.04
