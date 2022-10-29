@@ -47,6 +47,10 @@ const feeds = [
     '12tone',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCTUtqcDkzw7bisadh6AOx5w',
   ],
+  [
+    'Nicolas Bras',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCqzB9Ks5H939XLuSuVLuPVw',
+  ],
 ]
 
 export default feeds
