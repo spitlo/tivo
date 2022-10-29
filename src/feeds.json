@@ -23,4 +23,16 @@
     'JAde Wii',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCqjAXHR5DHTCahIHpg7vspg',
   ],
+  [
+    'Rhythm Roulette',
+    'https://www.youtube.com/feeds/videos.xml?playlist_id=PL_QcLOtFJOUgNxURr8B4lNtf_3e9fWZzl',
+  ],
+  [
+    'Simon The Magpie',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCnbfRvqQcfw3eL71HfjROOQ',
+  ],
+  [
+    'Laura Kampf',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCRix1GJvSBNDpEFY561eSzw',
+  ],
 ]
