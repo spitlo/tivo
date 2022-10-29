@@ -35,6 +35,18 @@ const feeds = [
     'Laura Kampf',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCRix1GJvSBNDpEFY561eSzw',
   ],
+  [
+    'So Wassup',
+    'https://www.youtube.com/feeds/videos.xml?playlist_id=PLWDrXC9_8Kmgwu2zeWdDU1n6fPqIh98Xr',
+  ],
+  [
+    'Jim Lill',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCvAovXWLq8Q6VITKAB_Rjww',
+  ],
+  [
+    '12tone',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCTUtqcDkzw7bisadh6AOx5w',
+  ],
 ]
 
 export default feeds
