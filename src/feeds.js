@@ -51,6 +51,10 @@ const feeds = [
     'Nicolas Bras',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCqzB9Ks5H939XLuSuVLuPVw',
   ],
+  [
+    'Fuse | Crate Diggers',
+    'https://www.youtube.com/feeds/videos.xml?playlist_id=PL0DA2B4BAA4791B0F,',
+  ],
 ]
 
 export default feeds
