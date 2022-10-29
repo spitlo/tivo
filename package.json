@@ -1,22 +1,20 @@
 {
-  "name": "youtube-subs",
+  "name": "tivo",
   "type": "module",
-  "engines": {
-    "pnpm": "7.5.1"
-  },
   "scripts": {
     "build": "node scripts/build.js",
     "dev": "node scripts/dev.js"
   },
-  "author": "kevinfiol",
+  "author": "kevinfiol, spitlo",
   "license": "MIT",
   "dependencies": {
     "httpie": "1.1.2",
-    "rss-parser": "3.6.3",
+    "prettier": "^2.7.1",
+    "rss-parser": "3.12.0",
     "yeahjs": "0.3.0"
   },
   "devDependencies": {
-    "servbot": "0.2.2",
+    "servbot": "0.2.6",
     "watchlist": "0.3.1"
   }
 }

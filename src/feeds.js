@@ -1,4 +1,4 @@
-[
+const feeds = [
   [
     'Andrew Huang',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCdcemy56JtVTrsFIOoqvV8g',
@@ -36,3 +36,5 @@
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCRix1GJvSBNDpEFY561eSzw',
   ],
 ]
+
+export default feeds
