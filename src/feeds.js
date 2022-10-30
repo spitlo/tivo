@@ -53,7 +53,23 @@ const feeds = [
   ],
   [
     'Fuse | Crate Diggers',
-    'https://www.youtube.com/feeds/videos.xml?playlist_id=PL0DA2B4BAA4791B0F,',
+    'https://www.youtube.com/feeds/videos.xml?playlist_id=PL0DA2B4BAA4791B0F',
+  ],
+  [
+    'Vsauce',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA"',
+  ],
+  [
+    'Computerphile',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA',
+  ],
+  [
+    'LEMMiNO',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCRcgy6GzDeccI7dkbbBna3Q',
+  ],
+  [
+    'Veritasium',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA',
   ],
 ]
 
