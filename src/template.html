@@ -70,7 +70,8 @@
   <main>
     <% for (let day of it.days) { %>
       <div class="day">
-        <h2>
+        <h2 id="<%= day %>">
+          <a aria-label="Anchor link for: <%= day %>" class="anchor" href="#<%= day %>">#</a>
           <%= day %>
         </h2>
         <hr />
@@ -90,13 +91,15 @@
               <p>
                 <a href="<%= video.channel %>">
                   <strong>
-                    <%= video.author %>&nbsp;
+                    <%= video.author %>
                   </strong>
                 </a>
 
-                <a href="<%= video.youtube %>">
-                  <span>[YT]</span>
-                </a>
+                <span class="yt">
+                  <a href="<%= video.youtube %>">
+                    [YT]
+                  </a>
+                </span>
               </p>
             </div>
             <% } %>

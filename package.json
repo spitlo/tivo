@@ -3,17 +3,17 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.js",
-    "dev": "node scripts/dev.js"
+    "start": "node scripts/dev.js"
   },
   "author": "kevinfiol, spitlo",
   "license": "MIT",
   "dependencies": {
     "httpie": "1.1.2",
-    "prettier": "^2.7.1",
     "rss-parser": "3.12.0",
     "yeahjs": "0.3.0"
   },
   "devDependencies": {
+    "prettier": "2.7.1",
     "servbot": "0.2.6",
     "watchlist": "0.3.1"
   }

@@ -63,13 +63,15 @@ export async function render(dev = false, write = false) {
           const diffInMs = NOW - pubDate
 
           // Don't include videos more than a year old
-          if (diffInMs > YEAR_IN_MS) return
+          // if (diffInMs > YEAR_IN_MS) {
+          //   return
+          // }
 
           const month = pubDate.getMonth() + 1
           const date = pubDate.getDate()
-          const dateStr = `${pubDate.getFullYear()}.${
+          const dateStr = `${pubDate.getFullYear()}-${
             month < 10 ? `0${month}` : month
-          }.${date < 10 ? `0${date}` : date}`
+          }-${date < 10 ? `0${date}` : date}`
 
           if (!videos[dateStr]) videos[dateStr] = []
 
@@ -88,7 +90,9 @@ export async function render(dev = false, write = false) {
       }
     }
 
-    if (write) writeFileSync(resolve(TEST_FILE), JSON.stringify(videos), 'utf8')
+    if (write) {
+      writeFileSync(resolve(TEST_FILE), JSON.stringify(videos), 'utf8')
+    }
   }
 
   for (let day in videos) {
