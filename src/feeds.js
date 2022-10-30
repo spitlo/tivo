@@ -57,7 +57,7 @@ const feeds = [
   ],
   [
     'Vsauce',
-    'https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA"',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA',
   ],
   [
     'Computerphile',
