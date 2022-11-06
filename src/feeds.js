@@ -1,4 +1,4 @@
-https://www.happycow.net/reviews/the-india-house-maastricht-245265const feeds = [
+const feeds = [
   [
     'Andrew Huang',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCdcemy56JtVTrsFIOoqvV8g',
