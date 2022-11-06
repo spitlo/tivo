@@ -1,4 +1,4 @@
-const feeds = [
+https://www.happycow.net/reviews/the-india-house-maastricht-245265const feeds = [
   [
     'Andrew Huang',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCdcemy56JtVTrsFIOoqvV8g',
@@ -70,6 +70,10 @@ const feeds = [
   [
     'Veritasium',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA',
+  ],
+  [
+    'Tiny Desk Concerts',
+    'https://www.youtube.com/feeds/videos.xml?playlist_id=PLy2PCKGkKRVaS5b4zx7H0hvVW0xND3E_Y',
   ],
 ]
 
