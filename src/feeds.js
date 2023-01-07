@@ -79,6 +79,10 @@ const feeds = [
     'Love Hulthén',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UC3u4Stbc_FJ7t2KR9JEh9Aw',
   ],
+  [
+    'Wintergatan',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCcXhhVwCT6_WqjkEniejRJQ',
+  ],
 ]
 
 export default feeds
