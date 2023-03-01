@@ -83,6 +83,14 @@ const feeds = [
     'Wintergatan',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCcXhhVwCT6_WqjkEniejRJQ',
   ],
+  [
+    'J. Kenji López-Alt',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCqqJQ_cXSat0KIAVfIfKkVA',
+  ],
+  [
+    'Internet Today',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCyZVCV9xhrCyz4hPehvb4Wg',
+  ],
 ]
 
 export default feeds
