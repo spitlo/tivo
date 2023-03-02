@@ -101,8 +101,7 @@ export async function render(dev = false, write = false) {
   })
 
   const now = NOW.toJSON()
-  // const nowFormatted = `${NOW.toISOString().split('T')[0]} ${NOW.toISOString().split('T')[1].substring(0, 5)}`
-  const nowFormatted = NOW.toISOString()
+  const nowFormatted = NOW.toLocaleString('sv', { timeZone: 'Europe/Stockholm' })
 
   const source = readFileSync(resolve(INPUT_TEMPLATE), { encoding: 'utf8' })
   const template = compile(source, { localsName: 'it' })
