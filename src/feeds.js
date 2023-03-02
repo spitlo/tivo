@@ -91,6 +91,10 @@ const feeds = [
     'Internet Today',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCyZVCV9xhrCyz4hPehvb4Wg',
   ],
+  [
+    'The New York Times',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCqnbDFdCpuN8CMEg0VuEBqA',
+  ],
 ]
 
 export default feeds
