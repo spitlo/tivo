@@ -60,13 +60,6 @@ export async function render(dev = false, write = false) {
 
         contents.items.forEach((item) => {
           const pubDate = new Date(item.pubDate)
-          const diffInMs = NOW - pubDate
-
-          // Don't include videos more than a year old
-          // if (diffInMs > YEAR_IN_MS) {
-          //   return
-          // }
-
           const month = pubDate.getMonth() + 1
           const date = pubDate.getDate()
           const dateStr = `${pubDate.getFullYear()}-${
@@ -79,10 +72,10 @@ export async function render(dev = false, write = false) {
             ...item,
             dateStr,
             youtube: item.link,
-            link: `https://${YOUTUBE_URL}` + item.link.split('youtube.com')[1],
+            link: `https://${YOUTUBE_URL}${item.link.split('youtube.com')[1]}`,
             thumbnail: item.group['media:thumbnail'][0]['$'].url,
             channel:
-              `https://${YOUTUBE_URL}` + contents.link.split('youtube.com')[1],
+              `https://${YOUTUBE_URL}${contents.link.split('youtube.com')[1]}`,
           })
         })
       } catch (e) {
@@ -107,8 +100,9 @@ export async function render(dev = false, write = false) {
     return a < b ? 1 : -1
   })
 
-  const now = NOW.toString().split('(')[0].trim()
-  const nowFormatted = `${NOW.toISOString().split('T')[0]} ${now.toISOString().split('T')[1].substring(0, 5)}`
+  const now = NOW.toJSON()
+  // const nowFormatted = `${NOW.toISOString().split('T')[0]} ${NOW.toISOString().split('T')[1].substring(0, 5)}`
+  const nowFormatted = NOW.toISOString()
 
   const source = readFileSync(resolve(INPUT_TEMPLATE), { encoding: 'utf8' })
   const template = compile(source, { localsName: 'it' })
