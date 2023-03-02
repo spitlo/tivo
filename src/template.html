@@ -9,24 +9,22 @@
   <style>
     html {
       opacity: 0;
-      transition: opacity .5s
+      transition: opacity 0.5s;
     }
 
     html.js {
-      opacity: 1
+      opacity: 1;
     }
 
     html.js-nomodule {
-      opacity: 1
+      opacity: 1;
     }
-
   </style>
   <noscript>
     <style>
       html {
-        opacity: 1 !important
+        opacity: 1 !important;
       }
-
     </style>
   </noscript>
 
@@ -68,6 +66,7 @@
 
 <body>
   <main>
+    <div id="lastUpdate">Updated: <%= it.nowFormatted %></div>
     <% for (let day of it.days) { %>
       <div class="day">
         <h2 id="<%= day %>">

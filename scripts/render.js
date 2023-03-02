@@ -12,7 +12,7 @@ const OUTPUT_HTML_FILE = 'dist/index.html'
 const OUTPUT_JSON_FILE = 'dist/index.json'
 const TEST_FILE = 'src/data.json'
 const YOUTUBE_URL = 'yewtu.be'
-const NOW = getNowDate()
+const NOW = new Date()
 const YEAR_IN_MS = 31536000000
 
 const PARSER = new Parser({
@@ -108,20 +108,21 @@ export async function render(dev = false, write = false) {
   })
 
   const now = NOW.toString().split('(')[0].trim()
+  const nowFormatted = `${NOW.toISOString().split('T')[0]} ${now.toISOString().split('T')[1].substring(0, 5)}`
 
   const source = readFileSync(resolve(INPUT_TEMPLATE), { encoding: 'utf8' })
   const template = compile(source, { localsName: 'it' })
-  const html = template({ videos, days, now })
+  const html = template({ videos, days, now, nowFormatted })
   writeFileSync(resolve(OUTPUT_HTML_FILE), html, { encoding: 'utf8' })
   writeFileSync(resolve(OUTPUT_JSON_FILE), JSON.stringify(videos, null, 2), {
     encoding: 'utf8',
   })
 }
 
-function getNowDate() {
-  const offset = -4.0
-  let d = new Date()
-  const utc = d.getTime() + d.getTimezoneOffset() * 60000
-  d = new Date(utc + 3600000 * offset)
-  return d
-}
+// function getNowDate() {
+//   const offset = -4.0
+//   let d = new Date()
+//   const utc = d.getTime() + d.getTimezoneOffset() * 60000
+//   d = new Date(utc + 3600000 * offset)
+//   return d
+// }
