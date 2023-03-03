@@ -95,6 +95,10 @@ const feeds = [
     'The New York Times',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCqnbDFdCpuN8CMEg0VuEBqA',
   ],
+  [
+    'Look Mum No Computer',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCafxR2HWJRmMfSdyZXvZMTw',
+  ],
 ]
 
 export default feeds
