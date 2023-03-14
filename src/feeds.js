@@ -99,6 +99,14 @@ const feeds = [
     'Look Mum No Computer',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCafxR2HWJRmMfSdyZXvZMTw',
   ],
+  [
+    'Sabine Hossenfelder',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UC1yNl2E66ZzKApQdRuTQ4tw',
+  ],
+  [
+    'PBS Space Time',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UC7_gcs09iThXybpVgjHZ_7g',
+  ],
 ]
 
 export default feeds
