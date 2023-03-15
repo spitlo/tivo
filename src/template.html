@@ -124,42 +124,37 @@
       </div>
       <div id="videoContainer">
         <% for (let day of it.days) { %>
-          <div class="day">
             <h2 id="<%= day %>">
               <a aria-label="Anchor link for: <%= day %>" class="anchor" href="#<%= day %>">#</a>
               <%= day %>
             </h2>
-            <hr />
-            <div class="videos">
-              <% for (let video of it.videos[day]) { %>
-                <div class="video" data-channel="<%= video.channel %>">
+            <% for (let video of it.videos[day]) { %>
+              <div class="video" data-channel="<%= video.channel %>">
+                <a href="<%= video.link %>">
+                  <img src="<%= video.thumbnail %>" loading="lazy" />
+                </a>
+
+                <p>
                   <a href="<%= video.link %>">
-                    <img src="<%= video.thumbnail %>" loading="lazy" />
+                    <%= video.title %>
+                  </a>
+                </p>
+
+                <p>
+                  <a href="<%= video.channel %>">
+                    <strong>
+                      <%= video.author %>
+                    </strong>
                   </a>
 
-                  <p>
-                    <a href="<%= video.link %>">
-                      <%= video.title %>
+                  <span class="yt">
+                    <a href="<%= video.youtube %>">
+                      [YT]
                     </a>
-                  </p>
-
-                  <p>
-                    <a href="<%= video.channel %>">
-                      <strong>
-                        <%= video.author %>
-                      </strong>
-                    </a>
-
-                    <span class="yt">
-                      <a href="<%= video.youtube %>">
-                        [YT]
-                      </a>
-                    </span>
-                  </p>
-                </div>
-                <% } %>
-            </div>
-          </div>
+                  </span>
+                </p>
+              </div>
+            <% } %>
         <% } %>
       </div>
     </main>

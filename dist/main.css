@@ -64,26 +64,29 @@ $white: #fffcfc;
   border-bottom: 1px solid var(--meta-color);
 }
 
-.day {
-  margin-bottom: 2rem;
+#videoContainer {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
 }
-
-/*#videoContainer.filtered .day h2,
-#videoContainer.filtered .day hr {
+#videoContainer h2 {
+  flex-basis: 100vw;
+}
+#videoContainer.filtered {
+  margin-top: 48px;
+}
+#videoContainer.filtered h2 {
   display: none;
 }
-*/
-.videos {
-  padding: 1rem 0;
-  gap: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-}
 
+.video {
+  align-self: stretch;
+  flex-basis: 16vw;
+}
 .video a {
   text-decoration: none;
 }
-
 .video.hidden {
   display: none;
 }
@@ -122,9 +125,4 @@ button {
 
 button:hover {
   background-color: var(--bg-color);
-}
-
-hr {
-  border: none;
-  border-bottom: 1px dashed var(--crumb-bordercolor);
 }
