@@ -10,7 +10,8 @@ import feeds from '../src/feeds.js'
 const INPUT_TEMPLATE = 'src/template.html'
 const OUTPUT_HTML_FILE = 'dist/index.html'
 const OUTPUT_JSON_FILE = 'dist/index.json'
-const TEST_FILE = 'src/data.json'
+const CHANNELS_FILE = 'src/channels.json'
+const VIDEOS_FILE = 'src/videos.json'
 const YOUTUBE_URL = 'yewtu.be'
 const NOW = new Date()
 const YEAR_IN_MS = 31536000000
@@ -46,10 +47,12 @@ function parseFeed(response) {
 }
 
 export async function render(dev = false, write = false) {
+  let channels = {}
   let videos = {}
 
   if (dev) {
-    videos = JSON.parse(readFileSync(resolve(TEST_FILE)), { encoding: 'utf8' })
+    channels = JSON.parse(readFileSync(resolve(CHANNELS_FILE)), { encoding: 'utf8' })
+    videos = JSON.parse(readFileSync(resolve(VIDEOS_FILE)), { encoding: 'utf8' })
   } else {
     for (const [_channel, feed] of feeds) {
       try {
@@ -66,16 +69,20 @@ export async function render(dev = false, write = false) {
             month < 10 ? `0${month}` : month
           }-${date < 10 ? `0${date}` : date}`
 
-          if (!videos[dateStr]) videos[dateStr] = []
+          if (!videos[dateStr]) {
+            videos[dateStr] = []
+          }
+
+          const channel = `https://${YOUTUBE_URL}${contents.link.split('youtube.com')[1]}`
+          channels[channel] = _channel
 
           videos[dateStr].push({
             ...item,
+            channel,
             dateStr,
-            youtube: item.link,
             link: `https://${YOUTUBE_URL}${item.link.split('youtube.com')[1]}`,
             thumbnail: item.group['media:thumbnail'][0]['$'].url,
-            channel:
-              `https://${YOUTUBE_URL}${contents.link.split('youtube.com')[1]}`,
+            youtube: item.link,
           })
         })
       } catch (e) {
@@ -84,7 +91,8 @@ export async function render(dev = false, write = false) {
     }
 
     if (write) {
-      writeFileSync(resolve(TEST_FILE), JSON.stringify(videos), 'utf8')
+      writeFileSync(resolve(CHANNELS_FILE), JSON.stringify(channels), 'utf8')
+      writeFileSync(resolve(VIDEOS_FILE), JSON.stringify(videos), 'utf8')
     }
   }
 
@@ -105,17 +113,9 @@ export async function render(dev = false, write = false) {
 
   const source = readFileSync(resolve(INPUT_TEMPLATE), { encoding: 'utf8' })
   const template = compile(source, { localsName: 'it' })
-  const html = template({ videos, days, now, nowFormatted })
+  const html = template({ channels, videos, days, now, nowFormatted })
   writeFileSync(resolve(OUTPUT_HTML_FILE), html, { encoding: 'utf8' })
   writeFileSync(resolve(OUTPUT_JSON_FILE), JSON.stringify(videos, null, 2), {
     encoding: 'utf8',
   })
 }
-
-// function getNowDate() {
-//   const offset = -4.0
-//   let d = new Date()
-//   const utc = d.getTime() + d.getTimezoneOffset() * 60000
-//   d = new Date(utc + 3600000 * offset)
-//   return d
-// }

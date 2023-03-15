@@ -35,10 +35,29 @@ $white: #fffcfc;
   right: 0;
 }
 
+#toolbar button {
+  color: #74edc4;
+  font-family: "Victor Mono", "Courier New", monospace;
+  font-size: 10px;
+  padding: 4px 6px;
+}
+#toolbar select {
+  background-color: var(--bg-color);
+  color: #74edc4;
+  font-family: "Victor Mono", "Courier New", monospace;
+  font-size: 10px;
+  padding: 4px 6px;
+}
+
 .day {
   margin-bottom: 2rem;
 }
 
+/*#videoContainer.filtered .day h2,
+#videoContainer.filtered .day hr {
+  display: none;
+}
+*/
 .videos {
   padding: 1rem 0;
   gap: 20px;
@@ -48,6 +67,10 @@ $white: #fffcfc;
 
 .video a {
   text-decoration: none;
+}
+
+.video.hidden {
+  display: none;
 }
 
 .yt {

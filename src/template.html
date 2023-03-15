@@ -44,9 +44,45 @@
     // Set js class on <html>
     document.documentElement.classList.remove('noJS')
     document.documentElement.classList.add('js')
+    // Set up filter
+    const $filter = document.getElementById('filter')
+    const $clearFilter = document.getElementById('clearFilter')
+    const $videoContainer = document.getElementById('videoContainer')
+    const $videos = document.getElementsByClassName('video')
+    const clearFilter = () => {
+      console.log('Clearing filter'); /* eslint-disable-line */
+      Array.from($videos).forEach(($el) => {
+        $el.classList.remove('hidden')
+      })
+      $filter.value = 'null'
+      $filter.classList.remove('active')
+      $videoContainer.classList.remove('filtered')
+    }
+    $clearFilter.addEventListener('click', clearFilter)
+    $filter.addEventListener('change', (event) => {
+      const channel = event?.target?.value
+      if (channel && channel !== 'null') {
+        // Activate filter
+        $filter.classList.add('active')
+      $videoContainer.classList.add('filtered')
+        // Hide all videos
+        Array.from($videos).forEach(($el) => {
+          $el.classList.add('hidden')
+        })
+        // Now show all relevant
+        const $visible = document.querySelectorAll('[data-channel="' + channel + '"]')
+        Array.from($visible).forEach(($el) => {
+          $el.classList.remove('hidden')
+        })
+      } else {
+        clearFilter()
+      }
+    })
   </script>
   <script nomodule>
     document.documentElement.classList.add('js-nomodule')
+    const $filter = document.getElementById('filter')
+    $filter.style = 'display: none;'
   </script>
 
   <title>Tivo / Spitlo.com</title>
@@ -67,44 +103,55 @@
 <body>
   <main>
     <div id="lastUpdate">Updated: <%= it.nowFormatted %> [SWE]</div>
-    <% for (let day of it.days) { %>
-      <div class="day">
-        <h2 id="<%= day %>">
-          <a aria-label="Anchor link for: <%= day %>" class="anchor" href="#<%= day %>">#</a>
-          <%= day %>
-        </h2>
-        <hr />
-        <div class="videos">
-          <% for (let video of it.videos[day]) { %>
-            <div class="video">
-              <a href="<%= video.link %>">
-                <img src="<%= video.thumbnail %>" loading="lazy" />
-              </a>
-
-              <p>
+    <div id="toolbar">
+      <select id="filter">
+        <option value="null">FILTER:</option>
+        <% for (const channel of Object.keys(it.channels)) { %>
+          <option value="<%= channel %>"><%= it.channels[channel] %></option>
+        <% } %>
+      </select>
+      <button id="clearFilter">CLEAR</button>
+    </div>
+    <div id="videoContainer">
+      <% for (let day of it.days) { %>
+        <div class="day">
+          <h2 id="<%= day %>">
+            <a aria-label="Anchor link for: <%= day %>" class="anchor" href="#<%= day %>">#</a>
+            <%= day %>
+          </h2>
+          <hr />
+          <div class="videos">
+            <% for (let video of it.videos[day]) { %>
+              <div class="video" data-channel="<%= video.channel %>">
                 <a href="<%= video.link %>">
-                  <%= video.title %>
-                </a>
-              </p>
-
-              <p>
-                <a href="<%= video.channel %>">
-                  <strong>
-                    <%= video.author %>
-                  </strong>
+                  <img src="<%= video.thumbnail %>" loading="lazy" />
                 </a>
 
-                <span class="yt">
-                  <a href="<%= video.youtube %>">
-                    [YT]
+                <p>
+                  <a href="<%= video.link %>">
+                    <%= video.title %>
                   </a>
-                </span>
-              </p>
-            </div>
-            <% } %>
+                </p>
+
+                <p>
+                  <a href="<%= video.channel %>">
+                    <strong>
+                      <%= video.author %>
+                    </strong>
+                  </a>
+
+                  <span class="yt">
+                    <a href="<%= video.youtube %>">
+                      [YT]
+                    </a>
+                  </span>
+                </p>
+              </div>
+              <% } %>
+          </div>
         </div>
-      </div>
       <% } %>
+    </div>
   </main>
 </body>
 

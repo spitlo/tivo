@@ -1,4 +1,5 @@
 dist/index.html
 !dist/.keep
-src/data.json
+src/channels.json
+src/videos.json
 node_modules
