@@ -25,7 +25,7 @@ $white: #fffcfc;
 #lastUpdate {
   background: #000;
   bottom: 0;
-  color: #74edc4;
+  color: var(--meta-color);
   font-family: "Victor Mono", "Courier New", monospace;
   font-size: 10px;
   opacity: 0.6;
@@ -35,18 +35,33 @@ $white: #fffcfc;
   right: 0;
 }
 
+#toolbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  opacity: 0.6;
+}
+#toolbar,
+#toolbar select,
 #toolbar button {
-  color: #74edc4;
+  color: var(--meta-color);
   font-family: "Victor Mono", "Courier New", monospace;
   font-size: 10px;
-  padding: 4px 6px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding-top: 6px;
+}
+#toolbar select,
+#toolbar button {
+  padding: 2px 0;
+  margin-right: 6px;
 }
 #toolbar select {
-  background-color: var(--bg-color);
-  color: #74edc4;
-  font-family: "Victor Mono", "Courier New", monospace;
-  font-size: 10px;
-  padding: 4px 6px;
+  background-color: rgba(0, 0, 0, 1);
+  max-width: 160px;
+  padding-left: 0;
+}
+#toolbar button:hover {
+  border-bottom: 1px solid var(--meta-color);
 }
 
 .day {
