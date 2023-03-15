@@ -95,6 +95,22 @@ const feeds = [
     'The New York Times',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCqnbDFdCpuN8CMEg0VuEBqA',
   ],
+  [
+    'Look Mum No Computer',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCafxR2HWJRmMfSdyZXvZMTw',
+  ],
+  [
+    'Sabine Hossenfelder',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UC1yNl2E66ZzKApQdRuTQ4tw',
+  ],
+  [
+    'PBS Space Time',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UC7_gcs09iThXybpVgjHZ_7g',
+  ],
+  [
+    'Electronoobs',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCjiVhIvGmRZixSzupD0sS9Q',
+  ],
 ]
 
 export default feeds
