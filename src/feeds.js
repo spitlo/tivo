@@ -107,6 +107,10 @@ const feeds = [
     'PBS Space Time',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UC7_gcs09iThXybpVgjHZ_7g',
   ],
+  [
+    'Electronoobs',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCjiVhIvGmRZixSzupD0sS9Q',
+  ],
 ]
 
 export default feeds
