@@ -72,6 +72,8 @@ $white: #fffcfc;
 }
 #videoContainer h2 {
   flex-basis: 100vw;
+  border-bottom: 1px dashed var(--crumb-bordercolor);
+  padding-bottom: 16px;
 }
 #videoContainer.filtered {
   margin-top: 48px;
