@@ -24,7 +24,7 @@
         color: var(--site-color) !important;
       }
       body.framed #closer {
-        display: block;
+        display: inline-block;
       }
     </style>
     <noscript>
@@ -93,6 +93,7 @@
           clearFilter()
         }
       })
+      // If we’re in an iframe, the closer button should close it
       const $frameElement = window.frameElement
       if ($frameElement) {
         document.body.className = 'framed'
