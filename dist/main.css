@@ -128,3 +128,15 @@ button {
 button:hover {
   background-color: var(--bg-color);
 }
+
+@media (max-width: 1230px) {
+  .video {
+    flex-basis: 30vw;
+  }
+}
+
+@media (max-width: 960px) {
+  .video {
+    flex-basis: 45vw;
+  }
+}
