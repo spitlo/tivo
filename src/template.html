@@ -18,6 +18,14 @@
       html.js-nomodule {
         opacity: 1;
       }
+
+      #closer {
+        display: none;
+        color: var(--site-color) !important;
+      }
+      body.framed #closer {
+        display: block;
+      }
     </style>
     <noscript>
       <style>
@@ -85,6 +93,13 @@
           clearFilter()
         }
       })
+      const $frameElement = window.frameElement
+      if ($frameElement) {
+        document.body.className = 'framed'
+        document.getElementById('closer').addEventListener('click', () => {
+          $frameElement.remove()
+        })
+      }
     </script>
     <script nomodule>
       document.documentElement.classList.add('js-nomodule')
@@ -121,6 +136,7 @@
         <button id="clearFilter">× CLEAR</button>
         <button id="goTop">⌃ TOP</button>
         <button id="goBottom">⌄ BOTTOM</button>
+        <button id="closer">[✕]</button>
       </div>
       <div id="videoContainer">
         <% for (let day of it.days) { %>
