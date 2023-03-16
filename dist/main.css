@@ -140,3 +140,9 @@ button:hover {
     flex-basis: 45vw;
   }
 }
+
+@media (max-width: 490px) {
+  .video {
+    flex-basis: 93vw;
+  }
+}
