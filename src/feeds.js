@@ -111,6 +111,10 @@ const feeds = [
     'Electronoobs',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCjiVhIvGmRZixSzupD0sS9Q',
   ],
+  [
+    'Internet Historian',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCR1D15p_vdP3HkrH8wgjQRw',
+  ],
 ]
 
 export default feeds
