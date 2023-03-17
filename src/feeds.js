@@ -115,6 +115,10 @@ const feeds = [
     'Internet Historian',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCR1D15p_vdP3HkrH8wgjQRw',
   ],
+  [
+    'Mic the Snare',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UC3qbvcgOHXRIFIofXyd1vBw',
+  ],
 ]
 
 export default feeds
