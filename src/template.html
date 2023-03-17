@@ -65,7 +65,6 @@
         document.documentElement.scrollTop = document.documentElement.scrollHeight
       })
       const clearFilter = () => {
-        console.log('Clearing filter'); /* eslint-disable-line */
         Array.from($videos).forEach(($el) => {
           $el.classList.remove('hidden')
         })
@@ -79,12 +78,14 @@
         if (channel && channel !== 'null') {
           // Activate filter
           $filter.classList.add('active')
-        $videoContainer.classList.add('filtered')
+          $videoContainer.classList.add('filtered')
+          // Scroll to top
+          document.documentElement.scrollTop = 0
           // Hide all videos
           Array.from($videos).forEach(($el) => {
             $el.classList.add('hidden')
           })
-          // Now show all relevant
+          // Now show all relevant videos
           const $visible = document.querySelectorAll('[data-channel="' + channel + '"]')
           Array.from($visible).forEach(($el) => {
             $el.classList.remove('hidden')
