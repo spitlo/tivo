@@ -93,12 +93,18 @@
           clearFilter()
         }
       })
-      // If we’re in an iframe, the closer button should close it
+      // Check if we’re in an iframe
       const $frameElement = window.frameElement
       if ($frameElement) {
+        // If we’re in an iframe, the closer button should close it
         document.body.className = 'framed'
         document.getElementById('closer').addEventListener('click', () => {
           $frameElement.remove()
+        })
+        // And links should have target attribute set to "_blank"
+        const $links = document.getElementById('videoContainer').getElementsByTagName('a')
+        Array.from($links).forEach(($link) => {
+          $link.setAttribute('target', '_blank')
         })
       }
     </script>
