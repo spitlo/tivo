@@ -64,6 +64,7 @@
       $goBottom.addEventListener('click', () => {
         document.documentElement.scrollTop = document.documentElement.scrollHeight
       })
+      // Set up clear button
       const clearFilter = () => {
         Array.from($videos).forEach(($el) => {
           $el.classList.remove('hidden')
@@ -72,6 +73,7 @@
         $filter.classList.remove('active')
         $videoContainer.classList.remove('filtered')
       }
+      // Set up filter
       $clearFilter.addEventListener('click', clearFilter)
       $filter.addEventListener('change', (event) => {
         const channel = event?.target?.value

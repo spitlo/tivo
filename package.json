@@ -8,6 +8,7 @@
   "author": "kevinfiol, spitlo",
   "license": "MIT",
   "dependencies": {
+    "html-minifier-terser": "^7.1.0",
     "httpie": "1.1.2",
     "rss-parser": "3.12.0",
     "yeahjs": "0.3.0"

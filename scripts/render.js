@@ -4,6 +4,7 @@ import { resolve } from 'path'
 import Parser from 'rss-parser'
 import { compile } from 'yeahjs'
 import { get } from 'httpie'
+import { minify } from 'html-minifier-terser'
 
 import feeds from '../src/feeds.js'
 
@@ -133,7 +134,14 @@ export async function render(dev = false, write = false) {
   const source = readFileSync(resolve(INPUT_TEMPLATE), { encoding: 'utf8' })
   const template = compile(source, { localsName: 'it' })
   const html = template({ channels: channelArray, videos, days, now, nowFormatted })
-  writeFileSync(resolve(OUTPUT_HTML_FILE), html, { encoding: 'utf8' })
+  const minifiedHtml = await minify(html, {
+    collapseWhitespace: true,
+    minifyCSS: true,
+    minifyJS: true,
+    removeAttributeQuotes: true,
+    removeComments: true,
+  })
+  writeFileSync(resolve(OUTPUT_HTML_FILE), minifiedHtml, { encoding: 'utf8' })
   writeFileSync(resolve(OUTPUT_JSON_FILE), JSON.stringify(videos, null, 2), {
     encoding: 'utf8',
   })
