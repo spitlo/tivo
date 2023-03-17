@@ -136,8 +136,8 @@
         FILTER:
         <select id="filter">
           <option value="null">---</option>
-          <% for (const channel of Object.keys(it.channels)) { %>
-            <option value="<%= channel %>"><%= it.channels[channel] %></option>
+          <% for (const channel of it.channels) { %>
+            <option value="<%= channel[0] %>"><%= channel[1] %></option>
           <% } %>
         </select>
         <button id="clearFilter">× CLEAR</button>

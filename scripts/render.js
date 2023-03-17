@@ -28,7 +28,9 @@ function parseFeed(response) {
     ? response.headers['content-type'].split(';')[0]
     : false
 
-  if (!contentType) return false
+  if (!contentType) {
+    return false
+  }
 
   const contentTypes = [
     'application/json',
@@ -111,9 +113,26 @@ export async function render(dev = false, write = false) {
   const now = NOW.toJSON()
   const nowFormatted = NOW.toLocaleString('sv', { timeZone: 'Europe/Stockholm' })
 
+  const channelArray = []
+  for (const key of Object.keys(channels)) {
+    channelArray.push([key, channels[key]])
+  }
+  channelArray.sort((a, b) => {
+    const x = a[1].toLowerCase()
+    const y = b[1].toLowerCase()
+
+    if (x < y) {
+      return -1
+    } else if (x > y) {
+      return 1
+    } else {
+      return 0
+    }
+  })
+
   const source = readFileSync(resolve(INPUT_TEMPLATE), { encoding: 'utf8' })
   const template = compile(source, { localsName: 'it' })
-  const html = template({ channels, videos, days, now, nowFormatted })
+  const html = template({ channels: channelArray, videos, days, now, nowFormatted })
   writeFileSync(resolve(OUTPUT_HTML_FILE), html, { encoding: 'utf8' })
   writeFileSync(resolve(OUTPUT_JSON_FILE), JSON.stringify(videos, null, 2), {
     encoding: 'utf8',
