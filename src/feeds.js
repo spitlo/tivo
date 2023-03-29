@@ -119,6 +119,10 @@ const feeds = [
     'Mic the Snare',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UC3qbvcgOHXRIFIofXyd1vBw',
   ],
+  [
+    'Jameson Nathan Jones',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCamahlkvlAn7xzMsE6o5fnQ',
+  ],
 ]
 
 export default feeds
