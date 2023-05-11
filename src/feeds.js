@@ -123,6 +123,10 @@ const feeds = [
     'Jameson Nathan Jones',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCamahlkvlAn7xzMsE6o5fnQ',
   ],
+  [
+    'Joshua Ellingson',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UClTdXAFYm7nftFdLp8fKVmA',
+  ],
 ]
 
 export default feeds
