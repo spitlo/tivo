@@ -13,7 +13,7 @@ const OUTPUT_HTML_FILE = 'dist/index.html'
 const OUTPUT_JSON_FILE = 'dist/index.json'
 const CHANNELS_FILE = 'src/channels.json'
 const VIDEOS_FILE = 'src/videos.json'
-const YOUTUBE_URL = 'yewtu.be'
+const YOUTUBE_URL = 'invidious.no-logs.com'
 const NOW = new Date()
 const YEAR_IN_MS = 31536000000
 
