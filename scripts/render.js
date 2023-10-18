@@ -131,9 +131,15 @@ export async function render(dev = false, write = false) {
     }
   })
 
+  const instances = [
+    'invidious.protokolla.fi',
+    'vid.priv.au',
+    'yewtu.be',
+  ]
+
   const source = readFileSync(resolve(INPUT_TEMPLATE), { encoding: 'utf8' })
   const template = compile(source, { localsName: 'it' })
-  const html = template({ channels: channelArray, videos, days, now, nowFormatted })
+  const html = template({ channels: channelArray, videos, days, now, nowFormatted, instances, baseInstance: YOUTUBE_URL })
   const minifiedHtml = await minify(html, {
     collapseWhitespace: true,
     minifyCSS: true,

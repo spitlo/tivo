@@ -54,6 +54,7 @@
       // Set up filter
       const $filter = document.getElementById('filter')
       const $clearFilter = document.getElementById('clearFilter')
+      const $instance = document.getElementById('instance')
       const $videoContainer = document.getElementById('videoContainer')
       const $videos = document.getElementsByClassName('video')
       const $goTop = document.getElementById('goTop')
@@ -96,6 +97,30 @@
           clearFilter()
         }
       })
+      // Set up instance picker
+      $instance.addEventListener('change', (event) => {
+        const instanceName = event?.target?.value
+        if (instanceName && instanceName !== 'null') {
+          // // Activate instance
+          // $instance.classList.add('active')
+          // $videoContainer.classList.add('filtered')
+          console.log('HEY!'); /* eslint-disable-line */
+          // Change all video urls
+          Array.from($videos).forEach(($el) => {
+            let channel = $el.dataset.channel
+            let channelParts = channel.split('/')
+            channel = channel.replace(channelParts[2], instanceName)
+            $el.setAttribute('data-channel', channel)
+            const $link = $el.getElementsByTagName('a')[0]
+            console.log($link); /* eslint-disable-line */
+            let link = $link.getAttribute('href')
+            console.log(link); /* eslint-disable-line */
+            let linkParts = link.split('/')
+            link = link.replace(linkParts[2], instanceName)
+            $link.setAttribute('href', link)
+          })
+        }
+      })
       // Check if we’re in an iframe
       const $frameElement = window.frameElement
       if ($frameElement) {
@@ -110,6 +135,15 @@
           $link.setAttribute('target', '_blank')
         })
       }
+      // Detect back button. If we’re coming back from watching something and the filter
+      // dropdown still has a value, make sure we filter on that.
+      // const entries = performance.getEntriesByType('navigation');
+      // entries.forEach((entry) => {
+      //   console.log(entry); /* eslint-disable-line */
+      //   if (entry.type === 'back_forward') {
+      //     console.log('Back from the dead'); /* eslint-disable-line */
+      //   }
+      // })
     </script>
     <script nomodule>
       document.documentElement.classList.add('js-nomodule')
@@ -144,6 +178,13 @@
           <% } %>
         </select>
         <button id="clearFilter">× CLEAR</button>
+        INSTANCE:
+        <select id="instance">
+          <option value="<%= it.baseInstance %>"><%= it.baseInstance %></option>
+          <% for (const instance of it.instances) { %>
+            <option value="<%= instance %>"><%= instance %></option>
+          <% } %>
+        </select>
         <button id="goTop">⌃ TOP</button>
         <button id="goBottom">⌄ BOTTOM</button>
         <button id="closer">[✕]</button>
