@@ -132,6 +132,7 @@ export async function render(dev = false, write = false) {
   })
 
   const instances = [
+    'do.piped.video',
     'invidious.protokolla.fi',
     'vid.priv.au',
     'yewtu.be',
