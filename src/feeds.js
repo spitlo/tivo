@@ -127,6 +127,10 @@ const feeds = [
     'Joshua Ellingson',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UClTdXAFYm7nftFdLp8fKVmA',
   ],
+  [
+    'Mattias Krantz',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCEgm-3RvRn4nCR-fGGVsfdQ',
+  ],
 ]
 
 export default feeds
