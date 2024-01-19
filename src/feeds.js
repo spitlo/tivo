@@ -131,6 +131,10 @@ const feeds = [
     'Mattias Krantz',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCEgm-3RvRn4nCR-fGGVsfdQ',
   ],
+  [
+    'Nerd Musician',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCyqCwyBJ98fR-CPoyXUxY5w',
+  ],
 ]
 
 export default feeds
