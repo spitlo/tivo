@@ -135,6 +135,10 @@ const feeds = [
     'Nerd Musician',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCyqCwyBJ98fR-CPoyXUxY5w',
   ],
+  [
+    'Colin Furze',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCp68_FLety0O-n9QU6phsgw',
+  ],
 ]
 
 export default feeds
