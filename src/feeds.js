@@ -139,6 +139,10 @@ const feeds = [
     'Colin Furze',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCp68_FLety0O-n9QU6phsgw',
   ],
+  [
+    'Emily the Engineer',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UC_4YBM08hcpJqLl3vvgTqXg',
+  ],
 ]
 
 export default feeds
