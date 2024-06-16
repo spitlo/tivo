@@ -13,7 +13,7 @@ const OUTPUT_HTML_FILE = 'dist/index.html'
 const OUTPUT_JSON_FILE = 'dist/index.json'
 const CHANNELS_FILE = 'src/channels.json'
 const VIDEOS_FILE = 'src/videos.json'
-const YOUTUBE_URL = 'invidious.no-logs.com'
+const YOUTUBE_URL = 'invidious.protokolla.fi' // 'invidious.no-logs.com'
 const NOW = new Date()
 const YEAR_IN_MS = 31536000000
 
@@ -133,7 +133,7 @@ export async function render(dev = false, write = false) {
 
   const instances = [
     'do.piped.video',
-    'invidious.protokolla.fi',
+    'invidious.no-logs.com',
     'vid.priv.au',
     'yewtu.be',
   ]
