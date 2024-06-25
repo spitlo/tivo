@@ -143,6 +143,10 @@ const feeds = [
     'Emily the Engineer',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UC_4YBM08hcpJqLl3vvgTqXg',
   ],
+  [
+    'Tom 7',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UC3azLjQuz9s5qk76KEXaTvA',
+  ],
 ]
 
 export default feeds
