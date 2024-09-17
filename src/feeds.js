@@ -73,7 +73,7 @@ const feeds = [
   ],
   [
     'Tiny Desk Concerts',
-    'https://www.youtube.com/feeds/videos.xml?playlist_id=PLy2PCKGkKRVaS5b4zx7H0hvVW0xND3E_Y',
+    'https://www.youtube.com/feeds/videos.xml?playlist_id=PL1B627337ED6F55F0',
   ],
   [
     'Love Hulthén',
