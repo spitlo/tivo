@@ -147,6 +147,10 @@ const feeds = [
     'Tom 7',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UC3azLjQuz9s5qk76KEXaTvA',
   ],
+  [
+    'Practical Engineering',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCMOqf8ab-42UUQIdVoKwjlQ',
+  ],
 ]
 
 export default feeds
