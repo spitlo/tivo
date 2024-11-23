@@ -151,6 +151,10 @@ const feeds = [
     'Practical Engineering',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCMOqf8ab-42UUQIdVoKwjlQ',
   ],
+  [
+    'Digging the Greats',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCGSg3iQgRQ5M9CpluqkMAZg',
+  ],
 ]
 
 export default feeds
