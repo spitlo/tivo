@@ -155,6 +155,10 @@ const feeds = [
     'Digging the Greats',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCGSg3iQgRQ5M9CpluqkMAZg',
   ],
+  [
+    'David Hilowitz',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCCoAJ5JYKYTMubpTIsWi70w',
+  ],
 ]
 
 export default feeds
