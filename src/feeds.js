@@ -159,6 +159,10 @@ const feeds = [
     'David Hilowitz',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCCoAJ5JYKYTMubpTIsWi70w',
   ],
+  [
+    'OMA',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCgtSzqR7D0-BgEFcfhrmWVA',
+  ],
 ]
 
 export default feeds
