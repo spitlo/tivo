@@ -163,6 +163,10 @@ const feeds = [
     'OMA',
     'https://www.youtube.com/feeds/videos.xml?channel_id=UCgtSzqR7D0-BgEFcfhrmWVA',
   ],
+  [
+    'Internet Comment Etiquette',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCGY2w6hIZWwyxasBUN7wbaQ',
+  ],
 ]
 
 export default feeds
