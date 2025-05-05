@@ -165,7 +165,7 @@ const feeds = [
   ],
   [
     'Internet Comment Etiquette',
-    'https://www.youtube.com/feeds/videos.xml?channel_id=UCGY2w6hIZWwyxasBUN7wbaQ',
+    'https://www.youtube.com/feeds/videos.xml?channel_id=UCyWDmyZRjrGHeKF-ofFsT5Q',
   ],
 ]
 
