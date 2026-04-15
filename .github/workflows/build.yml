@@ -4,8 +4,8 @@ on:
     branches:
       - main
   schedule:
-    # Run this script every 4 hrs
-    - cron:  '9 */4 * * *'
+    # Run this script every 8 hrs
+    - cron:  '9 */8 * * *'
   workflow_dispatch:
 
 jobs:
