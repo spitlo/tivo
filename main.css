@@ -1,0 +1,148 @@
+/*
+Colors
+======
+$aquamarine: #74edc4;
+$black: #0e070c;
+$blue: #3f5469;
+$blueGray: #5a6c7e;
+$clearBlue: #0dbeff;
+$darkGray: #2d3238;
+$dirtyYellow: #b1b098;
+$gray: #aa9f9f;
+$honeydew: #ecffea;
+$lightBrown: #dfcece;
+$lightDirtyYellow: #f0eabc;
+$lightGray: #efefef;
+$lightSeagreen: #8bd1cd;
+$lightWhite: #fffffb;
+$mutedPink: #fff1f1;
+$mutedPinkTransparent: #fff1f115;
+$orange: #b55603;
+$red: #e30000;
+$white: #fffcfc;
+*/
+
+#lastUpdate {
+  background: #000;
+  bottom: 0;
+  color: var(--meta-color);
+  font-family: "Victor Mono", "Courier New", monospace;
+  font-size: 10px;
+  opacity: 0.6;
+  padding: 2px 4px;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+}
+
+#toolbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  opacity: 0.6;
+}
+#toolbar,
+#toolbar select,
+#toolbar button {
+  color: var(--meta-color);
+  font-family: "Victor Mono", "Courier New", monospace;
+  font-size: 10px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding-top: 6px;
+}
+#toolbar select,
+#toolbar button {
+  padding: 2px 0;
+  margin-right: 6px;
+}
+#toolbar select {
+  background-color: rgba(0, 0, 0, 1);
+  max-width: 160px;
+  padding-left: 0;
+}
+#toolbar button:hover {
+  border-bottom: 1px solid var(--meta-color);
+}
+
+#videoContainer {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+#videoContainer h2 {
+  flex-basis: 100vw;
+  border-bottom: 1px dashed var(--crumb-bordercolor);
+  padding-bottom: 16px;
+}
+#videoContainer.filtered {
+  margin-top: 48px;
+}
+#videoContainer.filtered h2 {
+  display: none;
+}
+
+.video {
+  align-self: stretch;
+  flex-basis: 16vw;
+}
+.video a {
+  text-decoration: none;
+}
+.video.hidden {
+  display: none;
+}
+
+.yt {
+  font-size: .7em;
+}
+
+.video > a > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+.inline {
+  display: inline;
+}
+
+.input-group {
+  display: flex;
+}
+
+button {
+  font-family: monospace;
+  border: 1px solid var(--bg-color);
+  background-color: var(--faded-bg);
+  color: var(--color);
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--bg-color);
+}
+
+@media (max-width: 1230px) {
+  .video {
+    flex-basis: 30vw;
+  }
+}
+
+@media (max-width: 960px) {
+  .video {
+    flex-basis: 45vw;
+  }
+}
+
+@media (max-width: 490px) {
+  .video {
+    flex-basis: 93vw;
+  }
+}
